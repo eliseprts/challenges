@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Modal -->
+    <div class="modal-container" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
+
+        <div class="overlay modal-trigger"></div>
+
+        <div class="modal">
+            <button aria-label="close-modal" class="close-modal modal-trigger">X</button>
+            <h1 id="modalTitle">Work in progress...</h1>
+            <p id="dialogDesc">N'hésitez pas à revenir plus tard 😉</p>
+        </div>
+
+    </div>
+
+    <button class="modal-btn modal-trigger">Open</button>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

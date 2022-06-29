@@ -2,7 +2,7 @@ const navLinks = [...document.querySelectorAll("nav a")]
 const sections = [...document.querySelectorAll("section")]
 
 // Calculation of the position top of each section
-let sectionsPosition;
+let sectionsPosition
 
 function positionCalculation() {
     sectionsPosition = sections.map(section => section.offsetTop)
