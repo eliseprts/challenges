@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: DM Sans, Helvetica, sans-serif;
+    background: hsl(27, 66%, 92%);
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 20px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.section {
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.balanceSection {
+    background: hsl(10, 79%, 65%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.balance {
+    color: hsl(33, 100%, 98%);
+}
+
+.balance h4 {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.balance p {
+    font-weight: 400;
+    font-size: 28px;
+}
+
+.chartSection {
+    background:hsl(33, 100%, 98%);
+}
+
+.chartSection h3 {
+    color: hsl(25, 47%, 15%);
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.chart {
+    padding-bottom: 10px;
+    border-bottom: solid 2px hsl(27, 66%, 92%);
+}
+
+.chartInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 40px;
+}
+
+.totalTitle {
+    color: hsl(28, 10%, 53%);
+    font-size: 16px;
+}
+
+.totalNumber {
+    color: hsl(25, 47%, 15%);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.percentage {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.percentageNumber {
+    color: hsl(25, 47%, 15%);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.percentageLabel {
+    color: hsl(28, 10%, 53%);
+    font-size: 16px;
+}
