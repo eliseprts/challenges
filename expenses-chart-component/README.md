@@ -13,7 +13,7 @@ This is a solution to the [Expenses chart component challenge on Frontend Mentor
 
 Create a bar chart component from scratch with the provided local JSON file and by using any tools to complete the challenge.
 
-Users should be able to:
+Users should be able to :
 
 - [x] View the bar chart and hover over the individual bars to see the correct amounts for each day
 - [x] See the highest bar highlighted in a different colour to the other bars
