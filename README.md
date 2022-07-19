@@ -12,3 +12,4 @@ Little challenges to improve my skills, learn and test new things, and store thi
 ## Frontend Mentor
 
 1. [Expenses Chart Component](/expenses-chart-component)
+2. [Advice Generator App](/advice-generator-app/)
