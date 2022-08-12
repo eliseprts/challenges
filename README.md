@@ -8,7 +8,7 @@ Little challenges to improve my skills, learn and test new things, and store thi
 2. [Smooth Scroll](/smooth-scroll/)
 3. [Hamburger Menu](/hamburger-menu/)
 4. [Background Clip](/background-clip/)
-5. [Glassmorphisme Cards](/glassmorphism-cards/)
+5. [Glassmorphism Cards](/glassmorphism-cards/)
 
 ## Frontend Mentor
 
