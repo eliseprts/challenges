@@ -1,42 +1,49 @@
+// Inputs validity
 const inputsValidity = {
     cardholder: false,
     cardNbr: false,
     cardDate: false,
     cardCVC: false
 }
-
+// Inputs
+const nameInput = document.querySelector(".cardholder")
+const cardNbrInput = document.querySelector(".card-number")
+const cardDateInput = document.querySelector(".card-date")
+const cvcInput = document.querySelector(".card-cvc")
+const inputs = [
+    nameInput,
+    cardNbrInput,
+    cardDateInput,
+    cvcInput
+]
 // Error messages
 const errorMsg = document.querySelectorAll(".error-msg")
 
-// Name validation
-const nameInput = document.querySelector(".cardholder")
-
+// NAME VALIDATION
 nameInput.addEventListener("blur", nameValidation)
 nameInput.addEventListener("input", nameValidation)
 
 function nameValidation() {
     if (nameInput.value.length > 0) {
-        showValidation({ index: 0, input: nameInput, validation: true })
+        showValidation({ index: 0, validation: true })
         inputsValidity.cardholder = true
     } else {
-        showValidation({ index: 0, input: nameInput, validation: false })
+        showValidation({ index: 0, validation: false })
         inputsValidity.cardholder = false
     }
 }
 
-function showValidation({ index, input, validation }) {
+function showValidation({ index, validation }) {
     if (validation) {
-        input.style.border = "1px solid #22c55e"
+        inputs[index].style.border = "1px solid #22c55e"
         errorMsg[index].style.display = "none"
     } else {
-        input.style.border = "1px solid #ff5252"
+        inputs[index].style.border = "1px solid #ff5252"
         errorMsg[index].style.display = "block"
     }
 }
 
-// Card number validation (visa)
-const cardNbrInput = document.querySelector(".card-number")
-
+// CARD NUMBER VALIDATION (visa)
 cardNbrInput.addEventListener("blur", cardNbrValidation)
 cardNbrInput.addEventListener("input", cardNbrValidation)
 
@@ -53,19 +60,16 @@ function cardNbrValidation() {
     }
 
     if (regexCardNbr.test(cardNbrInput.value)) {
-        showValidation({ index: 1, input: cardNbrInput, validation: true })
+        showValidation({ index: 1, validation: true })
         inputsValidity.cardNbr = true
     } else {
-        showValidation({ index: 1, input: cardNbrInput, validation: false })
+        showValidation({ index: 1, validation: false })
         inputsValidity.cardNbr = false
     }
 
 }
 
-// Date validation
-
-const cardDateInput = document.querySelector(".card-date")
-
+// DATE VALIDATION
 cardDateInput.addEventListener("blur", cardDateValidation)
 cardDateInput.addEventListener("input", cardDateValidation)
 
@@ -78,32 +82,29 @@ function cardDateValidation() {
     }
 
     if (regexDate.test(cardDateInput.value)) {
-        showValidation({ index: 2, input: cardDateInput, validation: true })
+        showValidation({ index: 2, validation: true })
         inputsValidity.cardDate = true
     } else {
-        showValidation({ index: 2, input: cardDateInput, validation: false })
+        showValidation({ index: 2, validation: false })
         inputsValidity.cardDate = false
     }
 }
 
-// CVC validation
-
-const cvcInput = document.querySelector(".card-cvc")
-
+// CVC VALIDATION
 cvcInput.addEventListener("blur", cvcValidation)
 cvcInput.addEventListener("input", cvcValidation)
 
 function cvcValidation() {
     if (cvcInput.value.length === 3) {
-        showValidation({ index: 3, input: cvcInput, validation: true })
+        showValidation({ index: 3, validation: true })
         inputsValidity.cardCVC = true
     } else {
-        showValidation({ index: 3, input: cvcInput, validation: false })
+        showValidation({ index: 3, validation: false })
         inputsValidity.cardCVC = false
     }
 }
 
-// Form validation
+// FORM VALIDATION
 const form = document.querySelector("form")
 const successMsg = document.querySelector(".success-msg")
 
@@ -119,25 +120,20 @@ function handleForm(e) {
     e.preventDefault()
 
     const keys = Object.keys(inputsValidity)
-    const succeedInputs = keys.filter(key => inputsValidity[key])
     const failedInputs = keys.filter(key => !inputsValidity[key])
-
-    if (succeedInputs.length === 4) {
+    
+    if (failedInputs.length) {
+        failedInputs.forEach(input => {
+            const index = keys.indexOf(input)
+            showValidation({ index: index, validation: false })
+        })
+    } else {
         // Hide form and display success msg
         form.style.display = "none"
         successMsg.style.display = "flex"
         imgCardCvc.textContent = cvcInput.value
-        imgCardNbr.textContent = formattingCardNbr(cardNbrInput.value, cardNbrInput)
+        imgCardNbr.textContent = cardNbrInput.value
         imgCardholder.textContent = nameInput.value
         imgCardDate.textContent = cardDateInput.value
-    } else {
-        alert("Please fill in all fields")
     }
-}
-
-// Formatting card number
-function formattingCardNbr(value, input) {
-    let formattedNbr = value.match(/.{1,4}/g).join(" ")
-    // console.log(formattedNbr)
-    return formattedNbr
 }
