@@ -54,21 +54,6 @@ body {
     width: 90%;
     left: 15px;
     top: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.symbol-1{
-    background: rgb(255, 255, 255);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-.symbol-2 {
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgb(255, 255, 255);
-    border-radius: 50%;
 }
 .card-front-number {
     position: absolute;
@@ -136,28 +121,54 @@ body {
     color: rgb(255, 82, 82);
     display: none;
 }
-form button {
+/* Success msg */
+.success-msg {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+.success-msg h2 {
+    margin-top: 30px;
+    text-transform: uppercase;
+    color: rgb(33, 9, 47);
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+.success-msg p {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    color: rgb(142, 133, 147);
+    font-size: 20px;
+}
+/* Buttons */
+button {
     display: block;
     width: 100%;
-    margin-top: 25px;
+    margin: 40px auto 0;
     padding: 12px 6px;
-    background: rgb(33, 9, 47);
-    border-radius: 5px;
+    background: #600594;
+    border-radius: 10px;
     border: none;
     color: rgb(255, 255, 255);
     font-size: 20px;
     font-family: Space Grotesk, sans-serif;
     cursor: pointer;
 }
-.credits {
+button:hover {
+    background: #7222a1;
+}
+/* .credits {
     padding-top: 60px;
+    padding-bottom: 20px;
     background: rgb(255, 255, 255);
     color: rgb(33, 9, 47);
     text-align: center;
 }
 .credits a {
     color: rgb(114, 34, 161);
-}
+} */
 
 /* Desktop */
 @media only screen and (min-width: 768px) {
@@ -185,5 +196,8 @@ form button {
         width: 50%;
         margin-inline: auto;
         padding-left: 50px;
+    }
+    button {
+        max-width: 350px;
     }
 }

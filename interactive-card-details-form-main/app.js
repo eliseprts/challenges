@@ -1,26 +1,8 @@
-// Form validation
 const inputsValidity = {
     cardholder: false,
     cardNbr: false,
     cardDate: false,
     cardCVC: false
-}
-
-const form = document.querySelector("form")
-
-form.addEventListener("submit", handleForm)
-
-function handleForm(e) {
-    e.preventDefault()
-
-    const keys = Object.keys(inputsValidity)
-    const succeedInputs = keys.filter(key => inputsValidity[key])
-
-    if (succeedInputs.length === 4) {
-        alert("Données envoyées avec succès")
-    } else {
-        alert("Problème")
-    }
 }
 
 // Error messages
@@ -62,22 +44,23 @@ const regexCardNbr = /^((4\d{3})|(5[1-5]\d{2})|(6011)|(34\d{1})|(37\d{1}))-?\s?\
 
 function cardNbrValidation() {
 
+    if (cardNbrInput.value.length === 4) {
+        cardNbrInput.value += " "
+    } else if (cardNbrInput.value.length === 9) {
+        cardNbrInput.value += " "
+    } else if (cardNbrInput.value.length === 14) {
+        cardNbrInput.value += " "
+    }
+
     if (regexCardNbr.test(cardNbrInput.value)) {
         showValidation({ index: 1, input: cardNbrInput, validation: true })
         inputsValidity.cardNbr = true
-        // formattingCardNbr(cardNbrInput.value, cardNbrInput)
     } else {
         showValidation({ index: 1, input: cardNbrInput, validation: false })
         inputsValidity.cardNbr = false
     }
 
 }
-
-// function formattingCardNbr(value, input) {
-//     let formattedNbr = value.match(/.{1,4}/g).join(" ")
-//     console.log(formattedNbr)
-//     input.value = formattedNbr
-// }
 
 // Date validation
 
@@ -89,6 +72,11 @@ cardDateInput.addEventListener("input", cardDateValidation)
 const regexDate = /^(0[1-9]|1[0-2])\/?([0-9]{2})$/
 
 function cardDateValidation() {
+
+    if (cardDateInput.value.length === 2) {
+        cardDateInput.value += "/"
+    }
+
     if (regexDate.test(cardDateInput.value)) {
         showValidation({ index: 2, input: cardDateInput, validation: true })
         inputsValidity.cardDate = true
@@ -113,4 +101,43 @@ function cvcValidation() {
         showValidation({ index: 3, input: cvcInput, validation: false })
         inputsValidity.cardCVC = false
     }
+}
+
+// Form validation
+const form = document.querySelector("form")
+const successMsg = document.querySelector(".success-msg")
+
+// Elements on the card
+const imgCardCvc = document.querySelector(".card-back-cvc")
+const imgCardNbr = document.querySelector(".card-front-number")
+const imgCardholder = document.querySelector(".card-front-name")
+const imgCardDate = document.querySelector(".card-front-date")
+
+form.addEventListener("submit", handleForm)
+
+function handleForm(e) {
+    e.preventDefault()
+
+    const keys = Object.keys(inputsValidity)
+    const succeedInputs = keys.filter(key => inputsValidity[key])
+    const failedInputs = keys.filter(key => !inputsValidity[key])
+
+    if (succeedInputs.length === 4) {
+        // Hide form and display success msg
+        form.style.display = "none"
+        successMsg.style.display = "flex"
+        imgCardCvc.textContent = cvcInput.value
+        imgCardNbr.textContent = formattingCardNbr(cardNbrInput.value, cardNbrInput)
+        imgCardholder.textContent = nameInput.value
+        imgCardDate.textContent = cardDateInput.value
+    } else {
+        alert("Please fill in all fields")
+    }
+}
+
+// Formatting card number
+function formattingCardNbr(value, input) {
+    let formattedNbr = value.match(/.{1,4}/g).join(" ")
+    // console.log(formattedNbr)
+    return formattedNbr
 }

@@ -14,7 +14,7 @@ Build out an interactiv card details form get it looking as close to the [design
 
 Users should be able to :
 
-- [ ] Fill in the form and see card details update in real-time
+- [x] Fill in the form and see card details update in real-time
 - [x] Receive error message when the form is submitted if : 
     - Any input field is empty
     - The card number, expiry date, or CVC fields are in the wrong format

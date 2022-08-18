@@ -22,41 +22,41 @@
       <div class="card-front">
         <img src="./images/bg-card-front.png" alt="" class="card-front-img">
         <div class="card-front-symbols">
-          <div class="symbol-1"></div>
-          <div class="symbol-2"></div>
+          <img src="./images/card-logo.svg" alt="card icon">
         </div>
         <p class="card-front-number">0000 0000 0000 0000</p>
         <p class="card-front-info">
-          <span>Jane Appleseed</span>
-          <span>00/00</span>
+          <span class="card-front-name">Jane Appleseed</span>
+          <span class="card-front-date">00/00</span>
         </p>
       </div>
     </div>
   
     <div class="form-container">
+      
       <div class="form">
         <form action="">
         
           <div class="input-group">
-            <label for="cardholder">Cardholder Name</label>
+            <label for="cardholder">Cardholder Name*</label>
             <input type="text" id="cardholder" class="cardholder" placeholder="Jane Appleseed" autocomplete="off">
             <span class="error-msg">Can't be blank</span>
           </div>
           
           <div class="input-group">
-            <label for="card-number">Card number</label>
+            <label for="card-number">Card number*</label>
             <input type="text" id="card-number" class="card-number" placeholder="4123 5678 9123 0000">
             <span class="error-msg">Wrong format, must contain 16 numbers and begin with 4</span>
           </div>
          
           <div class="card-input">
             <div class="input-group card-input-group">
-              <label for="card-date">Exp. Date</label>
+              <label for="card-date">Exp. Date*</label>
               <input type="text" id="card-date" class="card-date" placeholder="MM/YY">
               <span class="error-msg">Can't be blank</span>
             </div>
             <div class="input-group card-input-group">
-              <label for="card-cvc">CVC</label>
+              <label for="card-cvc">CVC*</label>
               <input type="text" id="card-cvc" class="card-cvc" placeholder="123">
               <span class="error-msg">Can't be blank</span>
             </div>
@@ -64,22 +64,24 @@
   
           <button type="submit">Confirm</button>
         </form>
+
+        <div class="success-msg">
+          <img src="./images/icon-complete.svg" alt="">
+          <h2>Thank you !</h2>
+          <p>We've added your card details</p>
+          <button>Continue</button>
+        </div>
+
       </div>
-      
-      <div class="credits">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-        Coded by <a href="https://github.com/eliseprts" target="_blank">Elise Prts</a>.
-      </div>
+    
     </div>
 
   </div>
 
-
-  <!-- Completed state start
-
-  Thank you!
-  We've added your card details
-  Continue -->
+  <!-- <div class="credits">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/eliseprts" target="_blank">Elise Prts</a>.
+  </div> -->
 
   <script src="./app.js"></script>
 </body>
