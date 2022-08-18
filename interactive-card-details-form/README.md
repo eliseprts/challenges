@@ -20,3 +20,12 @@ Users should be able to :
     - The card number, expiry date, or CVC fields are in the wrong format
 - [x] View the optimal layout depending on their device's screen size
 - [x] See hover, active, and focus states for interactive elements on the page
+
+## Result
+
+<p align="center">
+    <img src="./design/desktop-result.png" style="width:700px">
+</p>
+<p align="center">
+    <img src="./design/mobile-result.png" style="width:350px">
+</p>
