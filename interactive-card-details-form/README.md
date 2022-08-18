@@ -29,3 +29,9 @@ Users should be able to :
 <p align="center">
     <img src="./design/mobile-result.png" style="width:350px">
 </p>
+<p align="center">
+    <img src="./design/active-result.png" style="width:700px">
+</p>
+<p align="center">
+    <img src="./design/success-result.png" style="width:700px">
+</p>
