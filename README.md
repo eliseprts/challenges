@@ -9,6 +9,9 @@ Little challenges to improve my skills, learn and test new things, and store thi
 3. [Hamburger Menu](/hamburger-menu/)
 4. [Background Clip](/background-clip/)
 5. [Glassmorphism Cards](/glassmorphism-cards/)
+6. [Fixed Footer](/fixed-footer/)
+7. [Animated Title](/animated-title/)
+8. [Animated Categories](/animated-categories/)
 
 ## Frontend Mentor
 

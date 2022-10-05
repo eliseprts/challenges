@@ -1,0 +1,40 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+body {
+    background: #0f172a;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+nav {
+    background: #fafafa;
+    padding: 10px 50px;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+nav a {
+    color: #0f172a;
+}
+.content {
+    padding: 125px 50px 50px;
+    flex-grow: 1;
+}
+h1 {
+    color: #fafafa;
+    text-align: center;
+}
+footer {
+    background-color: #fafafa;
+    padding: 10px;
+    font-size: 20px;
+    color: #0f172a;
+    text-align: center;
+}
