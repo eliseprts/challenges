@@ -1,6 +1,6 @@
 # BACKGROUND CLIP
 
-Using background-clip followinf this tuto : [Ajouter un dégradé ou une image dans un texte !](https://youtu.be/-7wbgtdcD_A)
+Using background-clip following this tuto : [Ajouter un dégradé ou une image dans un texte !](https://youtu.be/-7wbgtdcD_A)
 
 ### Technologies used
 
