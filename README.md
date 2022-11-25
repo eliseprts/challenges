@@ -12,6 +12,7 @@ Little challenges to improve my skills, learn and test new things, and store thi
 6. [Fixed Footer](/fixed-footer/)
 7. [Animated Title](/animated-title/)
 8. [Animated Categories](/animated-categories/)
+9. [Funky letters](/funky-letters/)
 
 ## Frontend Mentor
 

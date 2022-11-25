@@ -1,0 +1,64 @@
+@use  "sass:map";
+
+$letters-colors: (
+    "c1": #d49c3d,
+    "c2": #d14b3d,
+    "c3": #cf52eb,
+    "c4": #44a3f7,
+    "c5": #5acb3c,
+    "c6": #debf40,
+    "c7": #fff,
+);
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #222;
+  font-family: "Acme", sans-serif ;
+  text-align: center;
+  padding-top: 150px;
+}
+
+.funky-container {
+  display: inline-block;
+  position: relative;
+}
+.funky-base,
+.funky-letter {
+  font-size: 200px;
+  font-weight: bold;
+}
+.funky-base {
+  color: transparent;
+}
+.funky-letter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-shadow: 
+  -1px -1px 0 #222,
+   1px -1px 0 #222,
+  -1px 1px 0 #222,
+   1px 1px 0 #222,
+   4px 4px 0 #00000033;
+  animation: funky 1.5s ease-in-out infinite;
+}
+@keyframes funky {
+  50% {
+    transform: translateY(50px);
+    // transform: translate(50px, 50px);
+    // transform: translateX(50px);
+  }
+}
+@for $i from 1 through 7 {
+  .fl-#{$i} {
+    animation-delay: - calc($i / 10) * 1s;
+    color: map.get($letters-colors, "c#{$i}");
+  }
+}
