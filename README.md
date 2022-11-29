@@ -13,6 +13,7 @@ Little challenges to improve my skills, learn and test new things, and store thi
 7. [Animated Title](/animated-title/)
 8. [Animated Categories](/animated-categories/)
 9. [Funky letters](/funky-letters/)
+10. [Glassmorphism navigation](/glassmorphism-nav/)
 
 ## Frontend Mentor
 
